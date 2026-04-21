@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>葡萄叶片识别系统</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>葡萄叶片识别系统</h1>
+    <p class="subtitle">上传叶片图像，系统将识别品种并介绍</p>
+
+    <form id="uploadForm" class="card">
+      <div class="form-row">
+        <input type="file" id="imageInput" name="file" accept="image/*" required />
+        <select id="detail" name="detail">
+          <option value="short">简短描述</option>
+          <option value="medium" selected>标准描述</option>
+          <option value="long">详细描述</option>
+        </select>
+        <button type="submit">开始识别</button>
+      </div>
+    </form>
+
+    <div class="grid">
+      <div class="card">
+        <h2>原图预览</h2>
+        <img id="preview" class="preview" alt="原图预览" />
+      </div>
+
+      <div class="card">
+        <h2>检测结果</h2>
+        <img id="resultImage" class="preview" alt="检测结果" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>识别标签</h2>
+      <div id="labels" class="content-box">暂无结果</div>
+    </div>
+
+    <div class="card">
+      <h2>生成文本</h2>
+      <div id="description" class="content-box">暂无结果</div>
+    </div>
+
+    <div id="loading" class="loading hidden">识别中，请稍候...</div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
